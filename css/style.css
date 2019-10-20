@@ -1,0 +1,13 @@
+body{
+    font-family: sans-serif;
+}
+#counterChart{
+    height: 300;
+    width: 300;
+}
+.navbar{
+    background: #04a39c;
+}
+.img-product{
+    width: 100%;
+}

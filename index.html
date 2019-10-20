@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hackathon Lima</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.10.1/firebase-database.js"></script>
+    <!-- ChartJS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!--Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="readProducts()">
+    <nav class="navbar navbar-dark navbar-expand-md mb-4">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="img/lima.jpg" alt="" height="90" width="90">
+            </a>
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#menu-principal"
+                aria-controls="menu-principal" aria-expanded="false" aria-label="Desplegar menú de navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu-principal">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a href="#" class="nav-link">Inicio</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Ajustes</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row" style="display: flex; align-items: center;">
+            <div class="col-md-4" id="cardSection2">
+
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="counterChart2" width="350" height="350"></canvas>
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="circleGraphic2" width="350" height="350"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center bg-info">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="table2">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="display: flex; align-items: center;">
+            <div class="col-md-4" id="cardSection3">
+
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="counterChart3" width="350" height="350"></canvas>
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="circleGraphic3" width="350" height="350"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center bg-info">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="table3">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="display: flex; align-items: center;">
+            <div class="col-md-4" id="cardSection4">
+
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="counterChart4" width="350" height="350"></canvas>
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="circleGraphic4" width="350" height="350"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center bg-info">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="table4">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="display: flex; align-items: center;">
+            <div class="col-md-4" id="cardSection1">
+
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="counterChart1" width="350" height="350"></canvas>
+            </div>
+            <div class="col-md-4 p-5">
+                <canvas id="circleGraphic1" width="350" height="350"></canvas>
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-bordered">
+                <thead>
+                    <tr class="text-center bg-info">
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                    </tr>
+                </thead>
+                <tbody id="table1">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/eada1e3dde.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
