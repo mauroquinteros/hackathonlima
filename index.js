@@ -1,13 +1,3 @@
-var firebaseConfig = {
-  apiKey: "AIzaSyCsNrs6gqjquI6SXbYTfCgBAKr0TMNg74w",
-  authDomain: "firebbp.firebaseapp.com",
-  databaseURL: "https://firebbp.firebaseio.com",
-  projectId: "firebbp",
-  storageBucket: "firebbp.appspot.com",
-  messagingSenderId: "247588061092",
-  appId: "1:247588061092:web:58bbd58b549b923f194b31",
-  measurementId: "G-D0P068MY6B"
-};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
